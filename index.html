@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <html lang="en">
+        <head>
+        <meta charset="utf-8">
+        <style>
+            .error {
+                border: 1px solid red;
+            }
+            .icon {
+                width: 20px;
+                height: 20px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="main">
+            <span id="msj"></span>
+            <div class="main-alumnos">
+                <h2 >Alumnos</h2>
+                <form>
+                    <input type="text" placeholder="nombre" id="nombre" required/>
+
+                    <input type="text" placeholder="apellidos" id="apellido" required/>
+
+                    <input type="number" placeholder="edad" id="edad" required />
+
+                    <button onclick="submitAlta(); return false;" type="submit">Dar de Alta</button>
+                </form>
+                <form>
+                    <input type="search" id="buscarAlumno" placeholder="Nombre Apellido" name="searchalumno" />
+                    <input type="submit" placeholder="Buscar" onclick="searchAlumno(); return false;"/>
+                    <div id="filtroAlumno"></div>
+                </form>
+            </div>
+            <div class="main-clases">
+                <h2>Clases</h2>
+                <form>
+                    <input type="text" placeholder="clase" id="clase" required />
+    
+                    <input type="number" placeholder="calificacion" id="calif" required/>
+    
+                    <input type="text" placeholder="alumno" id="alumno" required />
+    
+                    <button onclick="addClase(); return false;">Inscribir</button>
+                </form>
+            </div>
+            <div class="main-grupos">
+                <h2>Buscar por materia</h2>
+                <button onclick="sortAbc(); return false;"><img src="icons/sortAlphabeth.png" class="icon"></button>
+                <button onclick="sortNum(); return false;"><img src="icons/sortList.png" class="icon"></button>
+                <form>
+                    <input type="search" id="materia" placeholder="buscar materia" />
+                    <input type="submit" placeholder="Buscar" onclick="buscarMateria(); return false;"/>
+
+                    <ul id="grupo">
+
+                    </ul>
+                </form>
+            </div>
+        </div>
+        
+    </body>
+    <script type="text/javascript" src="index.js"></script>
+</html>
